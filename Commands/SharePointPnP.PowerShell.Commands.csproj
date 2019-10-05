@@ -520,6 +520,9 @@
       <HintPath>..\packages\System.Text.Encodings.Web.4.0.0\lib\netstandard1.0\System.Text.Encodings.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -607,6 +610,8 @@
     <Compile Include="Enums\InitializationType.cs" />
     <Compile Include="Enums\ListItemUpdateType.cs" />
     <Compile Include="Enums\StorageEntityScope.cs" />
+    <Compile Include="Extensions\RoleAssignmentExtensions.cs" />
+    <Compile Include="Extensions\SecurableObjectExtensions.cs" />
     <Compile Include="Files\ResetFileVersion.cs" />
     <Compile Include="Graph\GetDeletedUnifiedGroup.cs" />
     <Compile Include="Graph\RemoveDeletedUnifiedGroup.cs" />
@@ -637,6 +642,8 @@
     <Compile Include="Model\SPOTheme.cs" />
     <Compile Include="Model\TokenResult.cs" />
     <Compile Include="ClientSidePages\ExportClientSidePage.cs" />
+    <Compile Include="Permissions\Objects\Permission.cs" />
+    <Compile Include="Permissions\Objects\PermissionCollection.cs" />
     <Compile Include="Principals\RemoveAlert.cs" />
     <Compile Include="Principals\GetAlert.cs" />
     <Compile Include="Principals\AddAlert.cs" />
@@ -990,6 +997,9 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="DebugScript.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="ModuleFiles\SharePointPnP.PowerShell.2019.Commands.Format.ps1xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

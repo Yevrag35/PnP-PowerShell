@@ -40,7 +40,7 @@ namespace SharePointPnP.PowerShell.Commands.Extensions
             }
         }
 
-        private static Expression<Func<T, object>> GetClientObjectExpression<T>(T clientObject, string property) where T : ClientObject
+        internal static Expression<Func<T, object>> GetClientObjectExpression<T>(T clientObject, string property) where T : ClientObject
         {
             var memberExpression = Expression.PropertyOrField(Expression.Constant(clientObject), property);
             var memberName = memberExpression.Member.Name;
@@ -58,6 +58,15 @@ namespace SharePointPnP.PowerShell.Commands.Extensions
             var info_ClientObject_ObjectData = typeof(ClientObject).GetProperty("ObjectData", BindingFlags.NonPublic | BindingFlags.Instance);
             var objectData = (ClientObjectData)info_ClientObject_ObjectData.GetValue(clientObject, new object[0]);
             objectData.MethodReturnObjects.Clear();
+        }
+
+        internal static void SpecialLoad<T>(T clientObject, object retrieval) where T : ClientObject
+        {
+            var expressions = (Expression<Func<T, object>>)retrieval;
+            if (clientObject != null)
+            {
+                clientObject.Context.Load(clientObject, expressions);
+            }
         }
     }
 }

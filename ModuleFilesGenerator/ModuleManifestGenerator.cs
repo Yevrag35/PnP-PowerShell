@@ -103,7 +103,7 @@ namespace SharePointPnP.PowerShell.ModuleFilesGenerator
     CmdletsToExport = {cmdletsToExport}
     VariablesToExport = '*'
     AliasesToExport = '*'
-    FormatsToProcess = 'SharePointPnP.PowerShell.{spVersion}.Commands.Format.ps1xml' 
+    FormatsToProcess = @('SharePointPnP.PowerShell.{spVersion}.Commands.Format.ps1xml', 'Microsoft.SharePoint.Client.Permission.ps1xml')
     PrivateData = @{{
         PSData = @{{
             ProjectUri = 'https://aka.ms/sppnp'
@@ -125,7 +125,7 @@ namespace SharePointPnP.PowerShell.ModuleFilesGenerator
     CmdletsToExport = {cmdletsToExport}
     VariablesToExport = '*'
     AliasesToExport = '*'
-    FormatsToProcess = 'SharePointPnP.PowerShell.{spVersion}.Format.ps1xml' 
+    FormatsToProcess = @('SharePointPnP.PowerShell.{spVersion}.Format.ps1xml', 'Microsoft.SharePoint.Client.Permission.ps1xml')
     PrivateData = @{{
         PSData = @{{
             ProjectUri = 'https://aka.ms/sppnp'
